@@ -1,5 +1,7 @@
 # Infrastructure as Code with Terraform and LocalStack
 
+## [Repository Link](https://github.com/C-gyeltshen/container-scanning.git)
+
 **Learning Outcomes:**
 1. Use Terraform to define infrastructure on LocalStack AWS
 2. Deploy a basic Next.js starter kit to LocalStack AWS using AWS CodePipeline
