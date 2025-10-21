@@ -97,4 +97,48 @@ In this practical, you'll learn how to define, deploy, and secure cloud infrastr
 
     ![2](image/2.png)
 
-### 4. Define Infrastructure with lo
+### 4. Configure S3 Bucket for Next.js Application
+
+1. Create main.tf file in the project root:
+
+    ```terraform
+        resource "aws_s3_bucket" "test-bucket" {
+            bucket = "my-bucket"
+        }
+    ```
+
+2. Apply Terraform configuration:
+
+    ```terraform
+    tflocal init
+    tflocal apply
+    ```
+    ![7](image/7.png)
+    ![8](image/8.png)
+    ![9](image/9.png)
+
+3. Verify S3 Bucket Creation:
+
+    ```terraform
+    tflocal init
+    tflocal apply
+    ```
+    ![7](image/7.png)
+    ![8](image/8.png)
+    ![10](image/10.png)
+
+## Elastic Compute Cloud (EC2)
+
+### 1. Create a key pair
+
+```bash
+awslocal ec2 create-key-pair \
+    --key-name my-key \
+    --query 'KeyMaterial' \
+    --output text | tee key.pem
+```
+### 2. Connecting via SSH
+
+```bash
+awslocal ec2 run-instances --key-name my-key ...
+```
